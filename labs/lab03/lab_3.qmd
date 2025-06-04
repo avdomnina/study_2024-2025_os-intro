@@ -88,7 +88,7 @@ format:
 dnf install git
 ```
 
-![dnf install git](img/1.png)
+![dnf install git](images/1.png)
 
 ### Установка gh
 
@@ -98,7 +98,7 @@ Fedora:
 dnf install gh
 ```
 
-![dnf install gh](img/2.png)
+![dnf install gh](images/2.png)
 
 ## Базовая настройка git
 
@@ -109,7 +109,7 @@ git config --global user.name "Name Surname"
 git config --global user.email "work@mail"
 ```
 
-![Задаем имя и email](img/3.png)
+![Задаем имя и email](images/3.png)
 
 Настроим utf-8 в выводе сообщений git:
 
@@ -117,7 +117,7 @@ git config --global user.email "work@mail"
 git config --global core.quotepath false
 ```
 
-![git config --global core.quotepath false](img/4.png)
+![git config --global core.quotepath false](images/4.png)
 
 Зададим имя начальной ветки (будем называть её master):
 
@@ -137,7 +137,7 @@ git config --global core.autocrlf input
 git config --global core.safecrlf warn
 ```
 
-![Настройка utf-8](img/5.png)
+![Настройка utf-8](images/5.png)
 
 ## Создание ключей ssh
 
@@ -153,7 +153,7 @@ ssh-keygen -t rsa -b 4096
 ssh-keygen -t ed25519
 ```
 
-![Создание ключей ssh](img/6.png)
+![Создание ключей ssh](images/6.png)
 
 ## Создание ключа pgp
 
@@ -169,17 +169,17 @@ gpg --full-generate-key
 - размер 4096;
 - срок действия: значение по умолчанию — 0.
 
-![gpg --full-generate-key](img/7.png)
+![gpg --full-generate-key](images/7.png)
 
 Задаем имя и адрес электронной почты, соответствующий адресу, Комментарий оставляю пустым.
 
-![Задаем имя и адрес электронной почты](img/8.png)
+![Задаем имя и адрес электронной почты](images/8.png)
 
 ## Настройка github
 
 Создаем учетную запись на https://github.com. В моем случае, она уже была создана. Заполним основные данные.
 
-![Настройка github](img/9.png)
+![Настройка github](images/9.png)
 
 ## Добавление GPG ключа в GitHub
 
@@ -189,7 +189,7 @@ gpg --full-generate-key
 gpg --list-secret-keys --keyid-format LONG
 ```
 
-![gpg --list-secret-keys --keyid-format LONG](img/10.png)
+![gpg --list-secret-keys --keyid-format LONG](images/10.png)
 
 Экспортируем ключ в формате ASCII по его отпечатку:
 
@@ -197,7 +197,7 @@ gpg --list-secret-keys --keyid-format LONG
 gpg --armor --export <PGP Fingerprint>
 ```
 
-![gpg --armor --export <PGP Fingerprint>](img/11.png)
+![gpg --armor --export <PGP Fingerprint>](images/11.png)
 
 Копируем наш сгенерированный GPG ключ в буфер обмена:
 
@@ -207,7 +207,7 @@ gpg --armor --export <GPG Fingerprint> | xclip -sel clip
 
 Перейдем в настройки GitHu, нажмем на кнопку New GPG key и вставляем полученный ключ в поле ввода.
 
-![настройки GitHu](img/12.png)
+![настройки GitHu](images/12.png)
 
 ## Настройка автоматических подписей коммитов git
 
@@ -219,11 +219,11 @@ git config --global commit.gpgsign true
 git config --global gpg.program $(which gpg2)
 ```
 
-![Подпись коммитов](img/13.png)
+![Подпись коммитов](images/13.png)
 
 Установим чекбокс у `Flag unsigned commits as unverified` в разделе `Vigilant mode` для отметки неподписанных коммитов как непроверенных.
 
-![alt text](img/14.png)
+![alt text](images/14.png)
 
 ## Настройка gh
 
@@ -235,7 +235,7 @@ gh auth login
 
 После ответов на несколько наводящих вопросов, авторизуемся через браузер перейдя по предоставленной ссылке https://github.com/login/device и введя восьмизначный код.
 
-![alt text](img/15.png)
+![alt text](images/15.png)
 
 ## Сознание репозитория курса на основе шаблона
 
